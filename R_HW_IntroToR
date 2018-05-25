@@ -1,0 +1,94 @@
+# This is the editor and the part below the white line is called the console.
+
+# The hashtag is used to add comments
+
+# An addition
+5 + 5
+
+# A substraction
+5 - 5
+
+# A division
+(5 + 5) / 2
+
+# A plot
+plot(cars, type = "o", col = "blue")
+
+
+
+
+Load in the present data set with the help of the read.table() 
+function and assign the result to the object present. Your code 
+should look something like: read.table("dataset_url"). Use the quotes 
+" to tell R the provided url is a string (a sequence of characters) and not an object.
+
+# Read in your data set and assign to the object:
+present <- read.table("http://assets.datacamp.com/course/dasi/present.txt");
+
+# This will print your data set in the console:
+present
+
+
+
+
+
+Print the names of the present data frame.
+Print the dimensions of the present data frame.
+
+# The present data frame is already loaded
+present
+# Print the number of rows and variables with the dim() function:
+dim(present)
+
+# Print the names of the variables of the data frame:
+names(present)
+
+
+
+
+Say you want to view the number of boys born each year. Make use of the 
+my_data_frame$variable_name structure, and assign the result to num_boys.
+Now calculate the number of girls born each year, and assign the results to num_girls.
+
+# The present dataset is already loaded
+present
+# Find the number of boys born each year
+num_boys <- present$boys
+
+# Find the number of girls born each year
+num_girls <- present$girls
+
+# This will print the results
+num_boys
+num_girls
+
+
+
+
+
+Plot the number of girls born per year on the y-axis vs. the year on the x-axis. 
+Make sure to use the my_data_frame$variable_name structure twice.
+
+# The present dataset is already loaded
+present
+
+# Type here the code to create the plot:
+plot(present$year, present$girls)
+
+
+
+
+Adapt the plot to create a line plot instead of a dot plot.
+
+# The present dataset is already loaded
+
+# Adapt the code to create a line plot
+plot(x = present$year, y = present$girls), type = "l")
+
+
+
+
+
+
+
+
