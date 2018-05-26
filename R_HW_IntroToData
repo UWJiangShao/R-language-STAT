@@ -1,0 +1,278 @@
+Load the cdc data frame by using load(url("url_to_your_data_set")).
+# Load the cdc data frame into the workspace:
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/dasi/cdc.Rdata"))
+
+
+Use the names(your_data_frame) function to view the variables of the data frame.
+# The cdc data frame is already loaded into the workspace
+
+# Print the names of the variables:
+names(cdc)
+
+
+Use the head() and tail() functions to view first and last entries of the data frame.
+# The cdc data frame is already loaded into the workspace
+
+# Print the head and tails of the data frame:
+head(cdc)
+tail(cdc)
+
+
+How many cases and how many variables are there in the cdc data set? This data set is available 
+in the workspace; you can inspect it by executing cdc in the console on the right.
+9 cases; 20,000 variables
+press 1
+10 cases; 20,000 variables
+press 2
+20,000 cases; 9 variables <--
+press 3
+20,000 cases; 10 variables
+press 4
+
+
+Take a look at the height and genhlth variables of the cdc data frame. Use the head() 
+functions to avoid flooding your console!
+Assign the sum of 84941 and 19686 to the object sum.
+Assign the multiplication of 73 and 51 to the object mult.
+
+# The cdc data frame is already loaded into the workspace.
+
+# View the head or tail of both the height and the genhlth variables:
+head(cdc$height)
+head(cdc$genhlth)
+
+# Assign your sum here:
+sum <-84941 + 19686
+
+# Assign your multiplication here:
+mult <- 73 * 51
+
+
+Calculate the mean, var and median of the weight variable of your data frame. 
+(Just print it, no need to assign objects.)
+Use the summary() function to see some numerical facts about the weight variable of 
+your data frame. (Again just print it.)
+
+# The cdc data frame is already loaded into the workspace
+mean(cdc$weight)
+var(cdc$weight)
+median(cdc$weight)
+summary(cdc$weight)
+
+
+
+Use the table() function to create the frequency table for genhlth.
+Now create the relative frequency table for the same variable.
+# The cdc data frame is already loaded into the workspace.
+
+# Create the frequency table here:
+table(cdc$genhlth)
+
+# Create the relative frequency table here:
+table(cdc$genhlth) / 20000
+
+
+
+Draw the barplot with the table with the categorical data of smoke100 as input. 
+(You can do this in one line by nesting table() inside barplot()!)
+# The cdc data frame is already loaded into the workspace.
+
+# Draw the barplot:
+barplot(table(cdc$smoke100))
+
+
+Use the table() function to see how many participants have smoked across each gender. 
+Assign this table to gender_smokers.
+Plot the contents of this table using the mosaicplot() function.
+# The cdc data frame is already loaded into the workspace
+
+# How many participants have smoked across gender?
+gender_smokers <- table(cdc$gender, cdc$smoke100)
+
+# Print out gender_smokers
+gender_smokers 
+
+# Plot the mosaicplot
+mosaicplot(gender_smokers)
+
+
+interlude: How R thinks about data 
+----------------------------------------------------------------------------------------------------
+Assign the height of the 1337th respondent to height_1337 using the row-and-column notation. 
+(Use names to see what the index of height is.)
+Assign the weight of the 111th respondent to weight_111 using the row-and-column notation.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subsets
+height_1337 <- cdc[1337, 5]
+weight_111 <- cdc[111, 6]
+
+# Print the results
+height_1337
+weight_111
+
+
+Assign the variables between and including hlthplan and height for the first 8 respondents to first8.
+Assign the variables between and including weight to gender for respondents 10 to 20 to wt_gen_10_20.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subsets
+first8 <- cdc[1:8, 3:5]
+wt_gen_10_20 <- cdc[10:20, 6:9]
+
+# Print the subsets
+first8
+wt_gen_10_20
+
+
+Assign all variables for the 205th respondent to resp205.
+Assign the variables height and weight for all respondents to ht_wt.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subsets
+resp205 <- cdc[205, ]
+ht_wt <- cdc[ , 5:6]
+
+# Print the subsets
+resp205
+head(ht_wt)
+
+
+Assign the smoking status (smoke100) of the 1000th respondent to resp1000_smk.
+Assign the data containing the height of the first 30 respondents to first30_ht.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subsets
+resp1000_smk <- cdc$smoke100[1000]
+first30_ht <- cdc$height[1:30]
+
+# Print the subsets
+resp1000_smk
+first30_ht
+
+
+
+Use the subset() function to assign the subset of people in very good general health to very_good.
+Assign the subset of people aged over 50 (excluding 50) to age_gt50.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subsets
+very_good <- subset(cdc, cdc$genhlth == "very good")
+age_gt50 <- subset(cdc, cdc$age > 50)
+
+# Print the subsets
+head(very_good)
+head(age_gt50)
+
+
+
+Create a new object called under23_and_smoke that contains all observations of respondents 
+under the age of 23 that have smoked at least 100 cigarettes in their lifetime.
+# The cdc data frame is already loaded into the workspace
+
+# Create the subset
+under23_and_smoke <- subset(cdc, cdc$age < 23 & cdc$smoke100 == 1)
+
+# Print the top six rows of the subset
+head(under23_and_smoke)
+
+
+
+Draw a box plot of height using the boxplot() function.
+Use the summary() function to also get a numerical summary of the variable.
+Compare the two results.
+# The cdc data frame is already loaded into the workspace.
+
+# Draw the box plot of the respondents heights
+boxplot(cdc$height)
+
+# Print the summary
+summary(cdc$height)
+
+
+
+Use the ~ notation to box plot the weight of respondents as a function of whether or not 
+they smoke (smoke100).
+# The cdc data frame is already loaded into the workspace.
+
+# Draw the box plot of the weights versus smoking
+boxplot(cdc$weight ~ cdc$smoke100)
+
+
+
+Consider the Body Mass Index (BMI). BMI is a weight to height ratio and can be calculated as:
+
+BMI = weight(lb) / height(in)^2 × 703
+
+Calculate the BMI for each respondent and assign the result to bmi.
+Draw a box plot of the BMI versus the general health of the respondents.
+# The cdc data frame is already loaded into the workspace.
+
+# Calculate the BMI:
+bmi <- cdc$weight / (cdc$height * cdc$height) * 703
+
+# Draw the box plot:
+boxplot(bmi ~ cdc$genhlth)
+
+
+Histograms
+----------------------------------------------------------------------------------------------
+Draw a histogram of the bmi object we created in the previous exercise using the hist() function. 
+(bmi is already loaded in the workspace.)
+Play around with different values for the breaks argument. 
+Try 50 and 100 and see how it affects the generated graph.
+# The cdc data frame and bmi object are already loaded into the workspace.
+
+# Draw a histogram of bmi
+hist(bmi)
+
+# And one with breaks set to 50
+hist(bmi, breaks = 50)
+
+# And one with breaks set to 100
+hist(bmi, breaks = 100)
+
+
+
+Use the plot() function to make a scatterplot of the weight variable versus the wtdesire variable. 
+Both these variables can be found in the cdc data frame which is already available in the workspace.
+# The cdc data frame is already loaded into the workspace.
+
+# Draw your plot here
+plot(cdc$weight, cdc$wtdesire)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
