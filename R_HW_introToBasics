@@ -1,0 +1,443 @@
+# Calculate 3 + 4
+3 + 4
+
+# Calculate 6 + 12
+6 + 12
+
+
+
+
+Type 2^5 in the editor to calculate 2 to the power 5.
+Type 28 %% 6 to calculate 28 modulo 6.
+Click 'Submit Answer' and have a look at the R output in the console.
+Note how the # symbol is used to add comments on the R code.
+
+# An addition
+5 + 5 
+
+# A subtraction
+5 - 5 
+
+# A multiplication
+3 * 5
+
+ # A division
+(5 + 5) / 2 
+
+# Exponentiation
+2^5
+
+# Modulo
+28%%6
+
+
+
+
+
+Over to you: complete the code in the editor such that it assigns the value 42 
+to the variable x in the editor. Click 'Submit Answer'. Notice that when you ask 
+R to print x, the value 42 appears.
+
+
+
+
+
+
+# Assign the value 42 to x
+x <- 42
+
+# Print out the value of the variable x
+x
+
+
+
+
+Type the following code in the editor: my_apples <- 5. 
+This will assign the value 5 to my_apples.
+Type: my_apples below the second comment. 
+This will print out the value of my_apples.
+Click 'Submit Answer', and look at the console: 
+you see that the number 5 is printed. 
+So R now links the variable my_apples to the value 5.
+
+# Assign the value 5 to the variable my_apples
+my_apples <- 5
+
+# Print out the value of the variable my_apples
+my_apples
+
+
+
+
+
+
+
+
+
+Assign to my_oranges the value 6.
+Add the variables my_apples and my_oranges and have R simply print the result.
+Assign the result of adding my_apples and my_oranges to a new variable my_fruit.
+
+# Assign a value to the variables my_apples and my_oranges
+my_apples <- 5
+my_oranges <- 6
+
+# Add these two variables together
+my_apples+my_oranges
+
+# Create the variable my_fruit
+my_fruit <- my_oranges + my_apples
+
+
+
+
+
+
+Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
+Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+
+# Assign a value to the variable my_apples
+my_apples <- 5 
+
+# Fix the assignment of my_oranges
+my_oranges <- 6
+
+# Create the variable my_fruit and print it out
+my_fruit <- my_apples + my_oranges 
+my_fruit
+
+
+
+
+
+
+
+
+
+Basic data types in R
+R works with numerous data types. Some of the most basic types to get started are:
+
+Decimals values like 4.5 are called numerics.
+Natural numbers like 4 are called integers. Integers are also numerics.
+Boolean values (TRUE or FALSE) are called logical.
+Text (or string) values are called characters.
+Note how the quotation marks on the right indicate that "some text" is a character.
+
+Change the value of the:
+
+my_numeric variable to 42.
+my_character variable to "universe". Note that the quotation marks indicate that "universe" is a character.
+my_logical variable to FALSE.
+Note that R is case sensitive!
+
+# Change my_numeric to be 42
+my_numeric <- 42
+
+# Change my_character to be "universe"
+my_character <- "universe"
+
+# Change my_logical to be FALSE
+my_logical <- FALSE
+
+
+
+
+
+
+Complete the code in the editor and also print out the classes of my_character and my_logical.
+
+# Declare variables of different types
+my_numeric <- 42
+my_character <- "universe"
+my_logical <- FALSE 
+
+# Check class of my_numeric
+class(my_numeric)
+
+# Check class of my_character
+class(my_character)
+
+# Check class of my_logical
+class(my_logical)
+
+
+
+
+
+
+
+Do you still remember what you have learned in the first chapter? Assign the value "Go!" 
+to the variable vegas. Remember: R is case sensitive!
+
+# Define the variable vegas
+vegas <- "Go!"
+
+
+
+
+
+
+
+Complete the code such that boolean_vector contains the three elements: TRUE, FALSE and TRUE (in that order).
+
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+
+# Complete the code for boolean_vector
+boolean_vector <- c(TRUE, FALSE, TRUE)
+
+
+
+
+
+Assign the winnings/losses for roulette to the variable roulette_vector.
+
+# Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <-  c(-24,-50,100,-350,10)
+
+
+
+
+
+
+
+
+The code on the right names the elements in poker_vector with the days of the week. 
+Add code to do the same thing for roulette_vector.
+
+# Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Assign days as names of poker_vector
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+# Assign days as names of roulette_vectors
+names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+
+
+
+
+
+
+A variable days_vector that contains the days of the week has already been created for you.
+Use days_vector to set the names of poker_vector and roulette_vector.
+
+# Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# The variable days_vector
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+ 
+# Assign the names of the day to roulette_vector and poker_vector
+names(poker_vector) <-   days_vector
+names(roulette_vector) <-days_vector
+
+
+
+
+
+
+
+
+Take the sum of the variables A_vector and B_vector and it assign to total_vector.
+Inspect the result by printing out total_vector.
+
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- A_vector + B_vector
+  
+# Print out total_vector
+total_vector
+
+
+
+
+
+
+
+Assign to the variable total_daily how much you won or lost on each day in total (poker and roulette combined).
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Assign to total_daily how much you won/lost on each day
+total_daily <- roulette_vector + poker_vector
+
+
+
+
+
+
+
+
+Calculate the total amount of money that you have won/lost with roulette and assign to the variable total_roulette.
+Now that you have the totals for roulette and poker, you can easily calculate total_week (which is the sum of all gains and losses of the week).
+Print out total_week.
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Total winnings with poker
+total_poker <- sum(poker_vector)
+
+# Total winnings with roulette
+total_roulette <-  sum(roulette_vector)
+
+# Total winnings overall
+total_week <- total_poker + total_roulette
+
+# Print out total_week
+total_week  
+
+
+
+
+
+
+
+
+
+
+Calculate total_poker and total_roulette as in the previous exercise. Use the sum() function twice.
+Check if your total gains in poker are higher than for roulette by using a comparison. Simply print 
+out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Calculate total gains for poker and roulette
+total_poker <- sum(poker_vector)
+total_roulette <- sum(roulette_vector)
+
+# Check if you realized higher total gains in poker than in roulette 
+total_poker > total_roulette
+
+
+
+
+
+
+
+
+
+Assign the poker results of Wednesday to the variable poker_wednesday.
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+poker_wednesday <- poker_vector[3]
+
+
+
+
+
+
+
+
+
+
+Assign the poker results of Tuesday, Wednesday and Thursday to the variable poker_midweek.
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+poker_midweek <- poker_vector[c(2,3, 4)]
+
+
+
+
+
+
+
+
+
+Assign to roulette_selection_vector the roulette results from Tuesday up to Friday; 
+make use of : if it makes things easier for you.
+
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+roulette_selection_vector <- roulette_vector[c(2:5)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
